@@ -1,0 +1,13 @@
+def binaryIterativeSearch(needle, haystack, size):
+    start = 0
+    stop = size - 1
+    while stop > start:
+        middle  =  int (start + (stop - start)/2)
+        if needle == haystack[middle]:
+            return True
+        elif needle < haystack[middle]:
+            stop = middle - 1 
+        elif needle > haystack[middle]:
+            start = middle + 1
+            
+    return False
