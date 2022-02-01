@@ -1,0 +1,9 @@
+def linearRecursive(needle, haystack, size):
+    return linearRecursiveSearchHelper(needle, haystack, 0, size -1)
+
+def linearRecursiveSearchHelper(needle, haystack, start, stop):
+    if start > stop :
+        return False
+    if needle == haystack[start]:
+        return True
+    return linearRecursiveSearchHelper(needle, haystack, start + 1, stop)
