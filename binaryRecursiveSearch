@@ -1,0 +1,12 @@
+def binaryRecursiveSearch(needle, haystack, size):
+    return binaryRecursiveSearchHelper(needle, haystack, 0, size-1)
+
+def binaryRecursiveSearchHelper(needle, haystack, start, stop):
+    if start > stop:
+        return False
+    middle = int (start/2 + stop/2)
+    if needle == haystack[middle]:
+        return True
+    elif needle < haystack[middle]:
+            return binaryResursiveSearchHelper(needle, haystack, start, middle)
+    return binaryRecursiveSearchHelper(needle, haystack, middle+1, stop)
