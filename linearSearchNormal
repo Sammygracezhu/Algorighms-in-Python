@@ -1,0 +1,6 @@
+def linearSearch(needle, haystack, size):
+    i = 0;
+    for i in range(size):
+        if needle == haystack[i]:
+          return True
+    return False
