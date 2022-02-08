@@ -1,0 +1,27 @@
+import random
+
+def quicksort(A, size):
+    qsort(A, 0, size - 1)
+    
+def qsort(A, start, stop):
+    if start < stop:
+        p = partition(A, start, stop)
+        qsort(A, start, p-1)
+        qsort(A,p+1, stop)
+        
+def partition(A, start, stop):
+
+    randomIndex = random.randrange(start, stop)
+    A[stop], A[randomIndex] = A[randomIndex], A[stop]
+    pivot = A[stop]
+    i = start
+    j = start
+    while j< stop:
+        if A[j] < pivot:
+            A[i],A[j] = A[j],A[i]
+            i+=1
+        j+=1
+    A[i], A[stop] = A[stop], A[i]
+    return i
+    
+    
